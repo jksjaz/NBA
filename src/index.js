@@ -2,13 +2,13 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { Provider } from "react-redux"
 
-import Main from "./components/Main"
+import Routes from "./Router/Routes"
 import store from "./Redux/Store/store"
 import { getPlayers, getTeams, getFavs } from "./API/api"
 
 const jsx = (
     <Provider store={store}>
-        <Main />
+        <Routes />
     </Provider>
 )
 

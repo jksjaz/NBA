@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"
-import Search from "./Search";
 import Card from "./Card";
 import styles from "./styles";
 
@@ -21,11 +20,6 @@ class Main extends Component {
     render() {
         return (
             <div className="container" style={{ ...styles.container, ...this.props.style }}>
-                <div style={styles.title}>
-                    NBA Interview
-                    <p className="float-right h6 mt-2 text-muted">Favz: {this.props.favs ? this.props.favs.length : 0}</p>
-                </div>
-                <Search style={styles.search} />
                 <div className="row">
                     {this.props.players ? this.renderCards() : undefined}
                 </div>
