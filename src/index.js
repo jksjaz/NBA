@@ -4,7 +4,7 @@ import { Provider } from "react-redux"
 
 import Main from "./components/Main"
 import store from "./Redux/Store/store"
-import { getPlayers, getTeams } from "./API/api"
+import { getPlayers, getTeams, getFavs } from "./API/api"
 
 const jsx = (
     <Provider store={store}>
@@ -12,6 +12,7 @@ const jsx = (
     </Provider>
 )
 
+getFavs()
 getTeams()
 getPlayers()
 

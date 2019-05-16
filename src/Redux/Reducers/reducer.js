@@ -1,4 +1,4 @@
-import { PLAYERS, TEAMS, EDIT } from "../Actions/actions"
+import { PLAYERS, TEAMS, EDIT, FAVS } from "../Actions/actions"
 
 export default (state = {}, action) => {
     switch (action.type) {
@@ -16,6 +16,11 @@ export default (state = {}, action) => {
             return {
                 ...state,
                 edit: action.edit
+            }
+        case FAVS:
+            return {
+                ...state,
+                favs: action.favs
             }
         default:
             return state
