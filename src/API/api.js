@@ -3,7 +3,7 @@ import { players, teams } from "../Redux/Actions/actions"
 
 const staticURL = "http://localhost:3008/"
 
-const pagination = "?_page=7"
+const pagination = "?_page=1"
 const querySyntax = "?q="
 
 export const playerURL = `${staticURL}players`
@@ -14,7 +14,7 @@ export const getPlayers = () => {
 }
 
 export const queryData = query => {
-    if (query.length > 1) {
+    if (query.length > 0) {
         fetch(playerURL + querySyntax + query).then(items => items.json()).then(res => store.dispatch(players(res)))
     }
 }
@@ -25,8 +25,10 @@ export const getTeams = () => {
 
 export const updatePlayer = updates => {
     fetch(playerURL + "/" + updates.id, {
-        method: 'PUT',
-        body: JSON.stringify({name: updates.name, team: updates.team})
-    }).then(item => item.json()).then(res => console.log(res))
-    
+        method: 'PATCH',
+        body: JSON.stringify(updates),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(item => item.json()).then(res => getPlayers())
 }
