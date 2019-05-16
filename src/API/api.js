@@ -22,3 +22,11 @@ export const queryData = query => {
 export const getTeams = () => {
     fetch(teamURL).then(items => items.json()).then(res => store.dispatch(teams(res)))
 }
+
+export const updatePlayer = updates => {
+    fetch(playerURL + "/" + updates.id, {
+        method: 'PUT',
+        body: JSON.stringify({name: updates.name, team: updates.team})
+    }).then(item => item.json()).then(res => console.log(res))
+    
+}
