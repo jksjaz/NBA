@@ -2,6 +2,8 @@
 
 ## Description:
 
+-   This project was completely created to test speed and therefore contains a lot of repetition of the code and the code is not refactored.
+-   Just to give you a basic idea of thinking skills, not to judge on the code efficiency. Definately refactoring would do that job.
 -   Check out the API index at http://localhost:3008. Note that the api uses json-server: https://github.com/typicode/json-server
 -   **The webpack server and API server for the project can be run via `npm start`**.
 
